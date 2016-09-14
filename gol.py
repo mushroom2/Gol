@@ -21,7 +21,7 @@
  которые затем взаимодействуют согласно правилам уже без его участия (он является наблюдателем).
 """
 
-from random import *
+from random import randint
 
 
 class Map:
@@ -32,7 +32,6 @@ class Map:
         self.startcells = startcells
 
     def makemap(self):
-        print('KapTa CgeJIaHa')
         Map.myMap = [[0 for i in range(self.size)] for i in range(self.size)]
 
     def getmap(self):
@@ -58,7 +57,6 @@ class Cell:
         self.status = Map.myMap[self.y][self.x]
         return self.status
 
-
     def make_alive(self):
         Map.myMap[self.y][self.x] = 1
         self.status = 1
@@ -83,7 +81,6 @@ class Cell:
                     el[point] = 0
 
     def get_nes(self):
-
         self.check_neighbors()
         self.nes = []
         for i in self.neighbors:
@@ -140,8 +137,8 @@ a.getmap()
 while True:      # тут будут условия
     a = input('>>> ')
     d = Round()
-    d.next_round() #создание списка живых клеток
-    d.minimap()     #
+    d.next_round()  # создание списка живых клеток
+    d.minimap()
     d.scan()
     d.analyze()
     d.desteny()
